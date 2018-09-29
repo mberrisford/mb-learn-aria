@@ -23,6 +23,7 @@
 		this._defaults = defaults;
 		this._name = pluginName;
 
+
 		this.init();
 	}
 
@@ -155,21 +156,6 @@
 
 				break;
 		}
-	};
-
-	/** 
-	 * Handles focusin event on text field.
-	 * 
-	 * @param {object} event - Focus event.
-	 * @param {object} event.data - Event data.
-	 * @param {object} event.data.plugin - Reference to plugin.
-	 */
-	Plugin.prototype.onFocusIn = function (event) {
-
-		var plugin = event.data.plugin;
-
-		setTimeout(function () { plugin.list.empty().hide(); }, 200);
-
 	};
 
 	/** 
