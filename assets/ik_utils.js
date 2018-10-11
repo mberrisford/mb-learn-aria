@@ -1,6 +1,6 @@
 var ik_utils = ik_utils || {};
 
-ik_utils.keys =  {
+ik_utils.keys = {
 	'tab': 9,
 	'enter': 13,
 	'esc': 27,
@@ -8,11 +8,15 @@ ik_utils.keys =  {
 	'left': 37,
 	'up': 38,
 	'right': 39,
-	'down':  40
+	'down': 40,
+	'home': 36,
+	'end': 35,
+	'pagedown': 34,
+	'pageup': 33
 }
-ik_utils.getTransitionEventName = function(){
+ik_utils.getTransitionEventName = function () {
 	var $elem, events, t, name;
-	
+
 	$elem = $('<div/>');
 	events = {
 		'transition': 'transitionend',
@@ -20,12 +24,12 @@ ik_utils.getTransitionEventName = function(){
 		'MozTransition': 'transitionend',
 		'WebkitTransition': 'webkitTransitionEnd'
 	};
-	
-	for (t in events){
-		if ($elem.css(t) !== undefined){
+
+	for (t in events) {
+		if ($elem.css(t) !== undefined) {
 			name = events[t];
 		}
 	}
-	
+
 	return name;
 }
